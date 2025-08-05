@@ -1,0 +1,23 @@
+
+:root {
+    --primary-color: #f4cb38;
+}
+
+.primary-button {
+    height: 45px;
+    border-radius: 8px;
+    border: none;
+    background-color: var(--primary-color);
+    width: 216px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #F2C833;
+        box-shadow: 0 0 5px var(--primary-color);   
+    }
+}
