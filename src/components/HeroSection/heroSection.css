@@ -1,0 +1,77 @@
+:root {
+  --pimary-color: #f4cb38;
+  --paragraph-color: #D1D5DB;
+}
+
+.hero-section {
+  width: 100%;
+  height: 690px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../assets/cinema-hero.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.5);
+  z-index: 0;
+}
+
+.hero-content {
+  z-index: 1;
+  width: 700px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.hero-title h1 {
+  color: #fff;
+  font-size: 72px;
+  word-wrap: break-word;
+}
+
+.hero-title .highlight {
+  color: var(--pimary-color);
+}
+
+
+.hero-content p {
+    font-size: 20px;
+    color: var(--paragraph-color);
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.secondary-button {
+    width: 170px;
+    background-color: transparent;
+    border: 2px solid var(--pimary-color);
+    color: var(--pimary-color);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+        background-color: #FBD650;
+        color: #000;
+        border: none;
+    }
+}

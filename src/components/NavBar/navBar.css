@@ -1,0 +1,71 @@
+@charset "UTF-8";
+
+:root {
+  --primary-color: #f4cb38;
+  --paragraph-color: #808080;
+
+  --bg-color-header: #1a1d23;
+  --bg-color-active: #2f3237;
+
+  --bg-color-hover: #24272d;
+  --text-color-hover: #c8bc91;
+
+  --border-color: #2f3237;
+}
+
+header {
+  background-color: var(--bg-color-header);
+  height: 65px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 100px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.title-logo a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-link {
+  color: var(--paragraph-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  text-decoration: none;
+  font-size: 14px;
+  height: 36px;
+  padding: 0px 15px;
+  border-radius: 10px;
+  transition: all 0.5s;
+
+  &:hover {
+    background-color: var(--bg-color-hover);
+    color: var(--text-color-hover);
+  }
+
+  &.active {
+    color: var(--primary-color);
+    background-color: var(--bg-color-active);
+  }
+}
+
+@media (max-width: 1300px) {
+  header {
+    justify-content: space-between;
+    padding: 0px 100px;
+  }
+}
