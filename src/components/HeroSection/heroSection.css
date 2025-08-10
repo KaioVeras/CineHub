@@ -1,6 +1,6 @@
 :root {
   --pimary-color: #f4cb38;
-  --paragraph-color: #D1D5DB;
+  --paragraph-color: #d1d5db;
 }
 
 .hero-section {
@@ -11,6 +11,7 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  z-index: 1;
 }
 
 .hero-bg {
@@ -45,33 +46,33 @@
   color: var(--pimary-color);
 }
 
-
 .hero-content p {
-    font-size: 20px;
-    color: var(--paragraph-color);
+  font-size: 20px;
+  color: var(--paragraph-color);
 }
 
 .hero-buttons {
-    display: flex;
-    gap: 20px;
+  display: flex;
+  gap: 20px;
 }
 
 .secondary-button {
-    width: 170px;
-    background-color: transparent;
-    border: 2px solid var(--pimary-color);
-    color: var(--pimary-color);
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    cursor: pointer;
-    transition: all 0.3s;
+  text-decoration: none;
+  width: 170px;
+  background-color: transparent;
+  border: 2px solid var(--pimary-color);
+  color: var(--pimary-color);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  cursor: pointer;
+  transition: all 0.3s;
 
-    &:hover {
-        background-color: #FBD650;
-        color: #000;
-        border: none;
-    }
+  &:hover {
+    background-color: #fbd650;
+    color: #000;
+    border: none;
+  }
 }
