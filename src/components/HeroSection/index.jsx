@@ -1,6 +1,8 @@
 import React from 'react';
 import './heroSection.css'
 
+import { Link } from 'react-router-dom';
+
 import PrimaryButton from '../PrimaryButton';
 
 import { Play, Heart } from 'lucide-react';
@@ -23,10 +25,10 @@ function HeroSection() {
                 <div className='hero-buttons'>
                     <PrimaryButton label="Assistir Destaques" icon={<Play size={16} />} />
 
-                    <button className='secondary-button'>
+                    <Link to='/favorites' className='secondary-button'>
                         <Heart size={16} />
                         Minha Lista
-                    </button>
+                    </Link>
                 </div>
             </div>
         </section>

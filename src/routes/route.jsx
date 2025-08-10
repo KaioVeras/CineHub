@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NavBar from '../components/NavBar';
 
 import Home from '../containers/Home';
+import MovieDetails from '../containers/MovieDetails';
 
 function AppRoutes() {
     return (
@@ -12,6 +13,7 @@ function AppRoutes() {
 
             <Routes>
                 <Route path='/' element={<Home />} />
+                <Route path='/movie/:id' element={<MovieDetails />} />
             </Routes>
         </BrowserRouter>
     );

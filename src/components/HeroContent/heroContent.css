@@ -1,0 +1,147 @@
+:root {
+  --bg-color-content: #14161a;
+  --bg-color-card: #212328;
+  --text-color: #ffeeb3;
+  --text-color-hover: #fbd650;
+  --paragraph-color: #a1a1a1;
+
+  --text-color-genre: #f7e5a1;
+  --bg-color-genre: #2f3237;
+}
+
+.content-container {
+  width: 100%;
+  background-color: var(--bg-color-content);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-header {
+  text-align: center;
+  margin-top: 50px;
+  max-width: 670px;
+}
+
+.content-header h1 {
+  color: var(--text-color);
+  font-size: 36px;
+}
+
+.content-header p {
+  color: var(--paragraph-color);
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.content-movies {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1500px;
+  gap: 30px;
+  padding:0px 25px 60px 25px;
+}
+
+.content-movies a {
+  text-decoration: none;
+}
+
+/* Estilo card */
+
+.card-movie {
+  width: 286px;
+  height: 635px;
+  background-color: var(--bg-color-card);
+  border-radius: 10px;
+  margin-top: 40px;
+  cursor: pointer;
+  transition: all 0.3s;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-5px);
+
+    h3 {
+      color: var(--text-color-hover);
+    }
+
+    .card-movie-image {
+      transform: scale(1.01);
+      filter: brightness(0.9);
+    }
+
+    .card-rating {
+      display: flex;
+    }
+  }
+
+}
+
+.card-rating {
+  position: absolute;
+  margin: 12px 0px -40px 15px;
+  font-size: 12px;
+  color: #fff;
+  background: linear-gradient(rgba(0, 0, 0, 0.5));
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 10px;
+  border-radius: 10px;
+  gap: 5px;
+  z-index: 1;
+}
+
+.card-movie-image {
+  width: 100%;
+  height: 429px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.card-movie-info {
+  padding: 15px;
+}
+
+.card-movie h3 {
+  color: var(--text-color);
+  font-size: 18px;
+}
+
+.card-movie-details {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.card-movie-details p {
+  font-size: 14px;
+  color: var(--paragraph-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.container-genres {
+  display: flex;
+  gap: 10px;
+}
+
+.card-genre {
+  background-color: var(--bg-color-genre);
+  color: var(--text-color-genre);
+  margin-top: 15px;
+  font-size: 12px;
+  padding: 5px 12px;
+  border-radius: 20px;
+}
+
+.card-overview {
+  color: var(--paragraph-color);
+  font-size: 14px;
+  margin-top: 15px;
+}
+

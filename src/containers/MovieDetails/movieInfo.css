@@ -1,0 +1,76 @@
+:root {
+  --bg-color: #17191e;
+  --text-primary-color: #ffeeb3;
+  --paragraph-color: #a1a4aa;
+}
+
+.movie-info {
+  background-color: var(--bg-color);
+  height: calc(100vh - 65px);
+  width: 100%;
+  padding: 40px 0px 10px 0px;
+}
+
+.button-back {
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  font-size: 15px;
+  text-decoration: none;
+  color: var(--text-primary-color);
+  margin-left: 40px;
+  padding: 12px 0px;
+  border-radius: 8px;
+  font-weight: bold;
+
+  &:hover {
+    background-color: #ee4343;
+    color: #fff;
+  }
+}
+
+.content-movie-details {
+  padding: 0 35px;
+  padding-top: 70px;
+  display: flex;
+  gap: 40px;
+}
+
+.movie-poster-image {
+  width: 300px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.movie-info-details h2 {
+  font-size: 47px;
+  color: var(--text-primary-color);
+}
+
+.movie-topics {
+  display: flex;
+  gap: 20px;
+  color: var(--paragraph-color);
+  margin-top: 10px;
+}
+
+.movie-topics p {
+  display: flex;
+  gap: 5px;
+}
+
+.movie-genres {
+  display: flex;
+  gap: 10px;
+}
+
+.card-genre-details {
+  background-color: #2B291F;
+  color: #fbd650;
+  margin-top: 15px;
+  font-size: 12px;
+  padding: 5px 12px;
+  border-radius: 20px;
+}
