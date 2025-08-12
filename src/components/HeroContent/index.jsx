@@ -36,7 +36,7 @@ function HeroContent() {
                     return {
                         ...objeto,
                         runtime: detailsResponse.data.runtime,
-                        genres: detailsResponse.data.genres.map((genre) => genre.name).slice(0, 3)
+                        genres: detailsResponse.data.genres.map((genre) => genre.name).slice(0, 2)
                     }
 
                 })

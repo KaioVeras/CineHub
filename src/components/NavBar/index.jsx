@@ -22,7 +22,7 @@ function NavBar() {
                     Início
                 </Link>
 
-                <Link to='/Favorites' className={`nav-link ${location.pathname == "/Favorites" ? "active" : ""}`}>
+                <Link to='/favorites' className={`nav-link ${location.pathname == "/Favorites" ? "active" : ""}`}>
                     <Heart size={16}/>
                     Quero Assistir
                 </Link>
