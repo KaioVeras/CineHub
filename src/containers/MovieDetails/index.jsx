@@ -6,6 +6,7 @@ import { ArrowLeft, Heart, Calendar, Clock, Users } from 'lucide-react';
 import { FaStar } from "react-icons/fa6";
 
 import PrimaryButton from '../../components/PrimaryButton';
+import Loader from '../../components/Loader';
 import api from '../../services/api';
 
 function MovieDetails() {
@@ -14,6 +15,7 @@ function MovieDetails() {
     const [movies, setMovies] = useState({});
     const [trailer, setTrailer] = useState(null);
     const [cast, setCast] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         async function loadDetailsMovies() {
@@ -53,6 +55,10 @@ function MovieDetails() {
 
                 .catch((err) => {
                     console.log(err);
+                })
+
+                .finally(() => {
+                    setLoading(false);
                 })
 
         }
@@ -105,26 +111,30 @@ function MovieDetails() {
                                     })}
                                 </div>
 
-                                <div className='movie-trailer'>
-                                    <h3>Trailer</h3>
-                                    {trailer && trailer.key ? (
-                                        <iframe
-                                            width="600"
-                                            height="315"
-                                            className='trailer'
-                                            src={`https://www.youtube.com/embed/${trailer.key}?rel=0&modestbranding=1&showinfo=0&controls=1`}
-                                            title="YouTube video player"
-                                            frameBorder="0"
-                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                            referrerPolicy="strict-origin-when-cross-origin"
-                                            allowFullScreen>
-                                        </iframe>
-                                    ) : (
-                                        <div className='no-trailer'>
-                                            <p className='no-trailer-text'>Trailer não disponível</p>
-                                        </div>
-                                    )}
-                                </div>
+                                {loading ? (
+                                    <Loader styleTrailer='container-loader-trailer'/>
+                                ) : (
+                                    <div className='movie-trailer'>
+                                        <h3>Trailer</h3>
+                                        {trailer && trailer.key ? (
+                                            <iframe
+                                                width="600"
+                                                height="315"
+                                                className='trailer'
+                                                src={`https://www.youtube.com/embed/${trailer.key}?rel=0&modestbranding=1&showinfo=0&controls=1`}
+                                                title="YouTube video player"
+                                                frameBorder="0"
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                referrerPolicy="strict-origin-when-cross-origin"
+                                                allowFullScreen>
+                                            </iframe>
+                                        ) : (
+                                            <div className='no-trailer'>
+                                                <p className='no-trailer-text'>Trailer não disponível</p>
+                                            </div>
+                                        )}
+                                    </div>
+                                )}
 
                                 <div className='movie-synopsis'>
                                     <h3>Sinopse</h3>

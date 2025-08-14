@@ -7,9 +7,11 @@ import { FaStar } from "react-icons/fa6";
 import { Link } from 'react-router-dom'
 
 import api from '../../services/api';
+import Loader from '../Loader';
 
 function HeroContent() {
     const [movies, setMovies] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         async function loadMovies() {
@@ -44,6 +46,7 @@ function HeroContent() {
 
 
             setMovies(moviesDetails);
+            setLoading(false);
         }
 
         loadMovies();
@@ -78,41 +81,45 @@ function HeroContent() {
                 <p>Descubra nossa seleção especial de filmes aclamados pela crítica e adorados pelo público</p>
             </div>
 
-            <div className='content-movies'>
-                {movies.map((movie) => {
-                    return (
-                        <Link to={`/movie/${movie.id}`} key={movie.id}>
-                            <div className='card-movie'>
-                                <div className='card-rating'>
-                                    <FaStar color='yellow' />
-                                    {movie.vote_average.toFixed(1)}
+            {loading ? (
+                <Loader styleContent='container-loader'/>
+            ) : (
+                <div className='content-movies'>
+                    {movies.map((movie) => {
+                        return (
+                            <Link to={`/movie/${movie.id}`} key={movie.id}>
+                                <div className='card-movie'>
+                                    <div className='card-rating'>
+                                        <FaStar color='yellow' />
+                                        {movie.vote_average.toFixed(1)}
+                                    </div>
+
+                                    <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} className='card-movie-image' />
+
+                                    <div className='card-movie-info'>
+                                        <h3>{movie.title}</h3>
+
+                                        <div className='card-movie-details'>
+                                            <p>{movie.release_date?.split('-')[0]}</p>
+                                            <p><Clock size={14} /> {formatRuntime(movie.runtime)}</p>
+                                        </div>
+
+                                        <div className='container-genres'>
+                                            {movie.genres.map((genre) => {
+                                                return <span key={genre} className='card-genre'>{genre}</span>
+                                            })}
+                                        </div>
+
+                                        <div className='card-overview'>
+                                            <p>{movie.overview === '' ? 'Não há sinopse para este filme no momento.' : formatText(movie.overview, 80)}</p>
+                                        </div>
+                                    </div>
                                 </div>
-
-                                <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} className='card-movie-image' />
-
-                                <div className='card-movie-info'>
-                                    <h3>{movie.title}</h3>
-
-                                    <div className='card-movie-details'>
-                                        <p>{movie.release_date?.split('-')[0]}</p>
-                                        <p><Clock size={14} /> {formatRuntime(movie.runtime)}</p>
-                                    </div>
-
-                                    <div className='container-genres'>
-                                        {movie.genres.map((genre) => {
-                                            return <span key={genre} className='card-genre'>{genre}</span>
-                                        })}
-                                    </div>
-
-                                    <div className='card-overview'>
-                                        <p>{movie.overview === '' ? 'Não há sinopse para este filme no momento.' : formatText(movie.overview, 80)}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </Link>
-                    );
-                })}
-            </div>
+                            </Link>
+                        );
+                    })}
+                </div>
+            )}
         </section>
     );
 }
