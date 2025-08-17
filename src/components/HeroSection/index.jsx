@@ -2,12 +2,14 @@ import React from 'react';
 import './heroSection.css'
 
 import { Link } from 'react-router-dom';
-
-import PrimaryButton from '../PrimaryButton';
-
 import { Play, Heart } from 'lucide-react';
 
+import PrimaryButton from '../PrimaryButton';
+import { useMenuStore } from '../../store/menuStore';
+
 function HeroSection() {
+    const isMenuOpen = useMenuStore((state) => state.isMenuOpen)
+
     return (
         <section className='hero-section'>
             <div className='hero-bg'></div>

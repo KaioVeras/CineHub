@@ -1,4 +1,3 @@
-
 :root {
     --primary-color: #f4cb38;
 }
@@ -18,6 +17,12 @@
 
     &:hover {
         background-color: #F2C833;
-        box-shadow: 0 0 5px var(--primary-color);   
+        box-shadow: 0 0 5px var(--primary-color);
+    }
+}
+
+@media (max-width: 540px) {
+    .primary-button {
+        width: 100% !important;
     }
 }
