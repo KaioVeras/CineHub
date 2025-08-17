@@ -5,6 +5,7 @@
 .primary-button {
     height: 45px;
     border-radius: 8px;
+    color: #000;
     border: none;
     background-color: var(--primary-color);
     width: 216px;
