@@ -31,7 +31,7 @@ function MovieDetails() {
                 })
                 .catch(() => {
                     console.log("Filme não encontrado");
-                    navigate("/", { replace: true });
+                    navigate("/", { replace: false });
                     return;
                 })
 
