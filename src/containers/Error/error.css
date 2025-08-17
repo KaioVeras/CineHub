@@ -1,0 +1,34 @@
+:root {
+  --bg-color-content: #14161a;
+  --bg-color-card: #212328;
+  --text-color: #ffeeb3;
+  --text-color-hover: #fbd650;
+  --paragraph-color: #a1a1a1;
+
+  --text-color-genre: #f7e5a1;
+  --bg-color-genre: #2f3237;
+}
+    
+.not-found {
+    background-color: var(--bg-color-content);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.not-found h1 {
+    color: var(--text-color);
+    font-size: 36px;
+}
+
+.not-found p {
+    color: var(--paragraph-color);
+    font-size: 20px;
+}
+
+.not-found a {
+    color: var(--text-color-hover);
+}

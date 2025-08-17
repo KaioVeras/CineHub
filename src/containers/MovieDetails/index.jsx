@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './movieInfo.css';
 
-import { useParams, Link } from 'react-router-dom'
+import { useParams, Link, useNavigate } from 'react-router-dom'
 import { ArrowLeft, Heart, Calendar, Clock, Users } from 'lucide-react';
 import { FaStar } from "react-icons/fa6";
 
@@ -11,6 +11,7 @@ import api from '../../services/api';
 
 function MovieDetails() {
     const { id } = useParams();
+    const navigate = useNavigate();
 
     const [movies, setMovies] = useState({});
     const [trailer, setTrailer] = useState(null);
@@ -27,6 +28,11 @@ function MovieDetails() {
             })
                 .then((response) => {
                     setMovies(response.data)
+                })
+                .catch(() => {
+                    console.log("Filme não encontrado");
+                    navigate("/", { replace: true });
+                    return;
                 })
 
             await api.get(`movie/${id}/videos`, {
@@ -53,8 +59,8 @@ function MovieDetails() {
                     setCast(response.data.cast.slice(0, 4));
                 })
 
-                .catch((err) => {
-                    console.log(err);
+                .catch(() => {
+                    console.log("Filme não encontrado");
                 })
 
                 .finally(() => {
@@ -112,7 +118,7 @@ function MovieDetails() {
                                 </div>
 
                                 {loading ? (
-                                    <Loader styleTrailer='container-loader-trailer'/>
+                                    <Loader styleTrailer='container-loader-trailer' />
                                 ) : (
                                     <div className='movie-trailer'>
                                         <h3>Trailer</h3>
