@@ -22,8 +22,8 @@ header {
   justify-content: space-around;
   gap: 100px;
   border-bottom: 1px solid var(--border-color);
+  z-index: 3;
   position: fixed;
-  z-index: 2;
 }
 
 .title-logo a {
@@ -65,9 +65,82 @@ header {
   }
 }
 
+.button-menu {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--primary-color);
+  height: 40px;
+  width: 40px;
+  border-radius: 10px;
+  transition: all 0.3s;
+  display: none;
+
+  &:hover {
+    background-color: #ee4343;
+    color: #fff;
+  }
+}
+
+.nav-bar-open {
+  background-color: var(--bg-color-header);
+  width: 100%;
+}
+
+.nav-links-open {
+  display: none;
+  position: fixed;
+  width: 100%;
+  margin-top: 55px;
+  background-color: var(--bg-color-header);
+  justify-content: center;
+  padding: 10px 0 20px 0;
+  z-index: 2;
+
+  &.open {
+    display: flex;
+  }
+}
+
+.nav-links-open div {
+  width: 90%;
+  padding-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid var(--border-color);
+  gap: 10px;
+}
+
+
 @media (max-width: 1300px) {
   header {
     justify-content: space-between;
     padding: 0px 100px;
+  }
+}
+
+@media (max-width: 720px) {
+  header {
+    padding: 0px 30px;
+    border: none;
+  }
+
+  .nav-links-open {
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-link {
+    width: 90%;
+    justify-content: flex-start;
+  }
+
+  .button-menu {
+    display: block;
   }
 }
