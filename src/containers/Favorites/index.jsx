@@ -20,7 +20,7 @@ function Favorites() {
                     <Heart size={100} color='#606268'/>
                     <h1>Nenhum filme na sua lista</h1>
                     <p>Explore nosso catálogo e adicione filmes que você quer assistir mais tarde. É fácil e rápido!</p>
-                    <PrimaryButton label="Explorar Catálogo" link="/"/>
+                    <PrimaryButton label="Explorar Catálogo" link="/" singleWidth="200px"/>
                 </div>
             </div>
         </div>

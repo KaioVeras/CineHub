@@ -12,6 +12,7 @@
   height: 100vh;
   padding-top: 65px;
   background-color: var(--bg-color-content);
+  padding-bottom: 20px;
 }
 
 .header-favorites {
@@ -36,10 +37,11 @@
 
 .content-favorites {
   background-color: var(--bg-color-content);
-  height: 65%;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 25px;
+  margin-top: 60px;
 }
 
 .card-content {
@@ -49,8 +51,10 @@
     align-items: center;
     justify-content: center;
     gap: 20px;
+    padding: 20px;
     height: 388px;
-    width: 830px;
+    max-width: 830px;
+    width: 100%;
     border-radius: 10px;
 }
 
@@ -67,4 +71,24 @@
 
 .card-content button {
     margin-top: 20px;
+}
+
+@media (max-width: 1050px) {
+    .header-favorites h1 {
+        font-size: 36px;
+    }
+    
+    .card-content p {
+        width: 100%;
+    }
+
+    .content-favorites {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 500px) {
+    .header-favorites {
+        padding-top: 20px;
+    }
 }
