@@ -41,24 +41,24 @@
 }
 
 .primary-button {
-    height: 45px;
-    border-radius: 8px;
-    color: #000;
-    font-weight: bold;
-    border: none;
-    background-color: var(--primary-color);
-    width: 300px;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    cursor: pointer;
+  height: 45px;
+  border-radius: 8px;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  background-color: var(--primary-color);
+  width: 300px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  cursor: pointer;
 
-    &:hover {
-        background-color: #F2C833;
-        box-shadow: 0 0 5px var(--primary-color);
-    }
+  &:hover {
+    background-color: #f2c833;
+    box-shadow: 0 0 5px var(--primary-color);
+  }
 }
 
 .content-movie-details {
@@ -184,7 +184,7 @@ h3 {
   }
 
   .movie-trailer {
-      height: 600px;
+    height: 600px;
   }
 
   .movie-poster {
@@ -225,6 +225,7 @@ h3 {
 
   .content-movie-details {
     padding-top: 0;
+    margin-top: -30px;
   }
 }
 
@@ -233,8 +234,6 @@ h3 {
     height: 400px;
   }
 }
-
-
 
 @media (max-width: 600px) {
   .movie-trailer {
@@ -249,9 +248,8 @@ h3 {
   .primary-button {
     width: 100%;
   }
+
+  .content-movie-details {
+    padding: 0 25px;
+  }
 }
-
-
-
-
-
