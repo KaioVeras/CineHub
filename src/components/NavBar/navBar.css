@@ -124,7 +124,6 @@ header {
 @media (max-width: 720px) {
   header {
     padding: 0px 30px;
-    border: none;
   }
 
   .nav-links-open {

@@ -40,7 +40,7 @@
   }
 }
 
-.primary-button {
+.primary-button-info {
   height: 45px;
   border-radius: 8px;
   color: #000;
@@ -203,7 +203,7 @@ h3 {
     height: 800px;
   }
 
-  .primary-button {
+  .primary-button-info {
     width: 500px;
   }
 }
@@ -250,7 +250,7 @@ h3 {
     height: 600px;
   }
 
-  .primary-button {
+  .primary-button-info {
     width: 100%;
   }
 

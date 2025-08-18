@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from 'react';
 import './navBar.css'
 
 import { Link, useLocation } from 'react-router-dom';
@@ -14,7 +13,7 @@ function NavBar() {
     const closeMenu = useMenuStore((state) => state.closeMenu)
 
     return (
-        <header>
+        <header style={{ border: isMenuOpen ? "none" : "" }}>
             <h1 className='title-logo'>
                 <Link to='/' onClick={closeMenu}>
                     <Film />

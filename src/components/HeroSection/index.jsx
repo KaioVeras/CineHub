@@ -5,11 +5,8 @@ import { Link } from 'react-router-dom';
 import { Play, Heart } from 'lucide-react';
 
 import PrimaryButton from '../PrimaryButton';
-import { useMenuStore } from '../../store/menuStore';
 
 function HeroSection() {
-    const isMenuOpen = useMenuStore((state) => state.isMenuOpen)
-
     return (
         <section className='hero-section'>
             <div className='hero-bg'></div>
@@ -25,7 +22,7 @@ function HeroSection() {
                 </p>
 
                 <div className='hero-buttons'>
-                    <PrimaryButton label="Assistir Destaques" icon={<Play size={16} />} />
+                    <PrimaryButton label="Assistir Destaques" icon={<Play size={16} />}/>
 
                     <Link to='/favorites' className='secondary-button'>
                         <Heart size={16} />

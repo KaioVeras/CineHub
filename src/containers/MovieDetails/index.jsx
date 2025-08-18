@@ -113,7 +113,7 @@ function MovieDetails() {
                 <div className='content-movie-details'>
                     <div className='movie-poster '>
                         <img src={`https://image.tmdb.org/t/p/original/${movies.poster_path}`} alt={movies.title} className='movie-poster-image' />
-                        <button className='primary-button' onClick={saveMovies}>
+                        <button className='primary-button-info' onClick={saveMovies}>
                             <Heart size={16} />
                             Quero Assistir
                         </button>
