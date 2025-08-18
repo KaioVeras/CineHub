@@ -6,6 +6,7 @@
     height: 45px;
     border-radius: 8px;
     color: #000;
+    font-weight: bold;
     border: none;
     background-color: var(--primary-color);
     width: 216px;
@@ -20,6 +21,10 @@
         background-color: #F2C833;
         box-shadow: 0 0 5px var(--primary-color);
     }
+}
+
+a {
+    text-decoration: none;
 }
 
 @media (max-width: 540px) {

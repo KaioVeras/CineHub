@@ -1,11 +1,15 @@
 import React from 'react';
 import './primaryButton.css';
 
-function PrimaryButton({ label, icon, singleWidth }) {
+import { Link } from 'react-router-dom';
+
+function PrimaryButton({ label, icon, singleWidth, onClick, link }) {
     return (
-        <button className='primary-button' style={{ width: singleWidth}}>
-            {icon} {label}
-        </button>
+        <Link to={link}>
+            <button className='primary-button' onClick={onClick} style={{ width: singleWidth }}>
+                {icon} {label}
+            </button>
+        </Link>
     )
 }
 

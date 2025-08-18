@@ -70,7 +70,7 @@ function MovieDetails() {
         }
 
         loadDetailsMovies();
-    }, [id]);
+    }, [navigate, id]);
 
     const formatRuntime = (runtime) => {
         const hours = Math.floor(runtime / 60); // Deixa sempre em número inteiro e divide por 60min para retornar as horas
@@ -86,6 +86,22 @@ function MovieDetails() {
 
     }
 
+    function saveMovies() {
+        const myListMovies = localStorage.getItem("@cinehub");
+        let savedMovies = JSON.parse(myListMovies) || []; // O localStorage só armazena strings, aqui estamos convertendo a string de volta em um array ou objeto
+
+        const hasMovie = savedMovies.some((savedMovies) => savedMovies.id === movies.id);
+
+        if (hasMovie) {
+            alert("Esse filme já está na sua lista!");
+            return;
+        }
+
+        savedMovies.push(movies);
+        localStorage.setItem("@cinehub", JSON.stringify(savedMovies));
+        alert("Filme salvo com sucesso!");
+    }
+
     return (
         <section className='movie-info'>
             <div className='container-movie-info'>
@@ -97,7 +113,10 @@ function MovieDetails() {
                 <div className='content-movie-details'>
                     <div className='movie-poster '>
                         <img src={`https://image.tmdb.org/t/p/original/${movies.poster_path}`} alt={movies.title} className='movie-poster-image' />
-                        <PrimaryButton label="Quero Assitir" icon={<Heart size={16} />} singleWidth='300px' />
+                        <button className='primary-button' onClick={saveMovies}>
+                            <Heart size={16} />
+                            Quero Assistir
+                        </button>
                     </div>
 
                     <div className='movie-info-details'>
@@ -127,9 +146,9 @@ function MovieDetails() {
                                                 width="600"
                                                 height="315"
                                                 className='trailer'
+                                                frameBorder="0"
                                                 src={`https://www.youtube.com/embed/${trailer.key}?rel=0&modestbranding=1&showinfo=0&controls=1`}
                                                 title="YouTube video player"
-                                                frameBorder="0"
                                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                                 referrerPolicy="strict-origin-when-cross-origin"
                                                 allowFullScreen>
