@@ -73,6 +73,71 @@
     margin-top: 20px;
 }
 
+.container-favorites-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+.header-movies {
+  background-color: var(--bg-color-header);
+  height: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0;
+}
+
+.header-title {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header-title h1 {
+  color: var(--text-color);
+  font-size: 48px;
+}
+
+.container-header-title p {
+  color: var(--paragraph-color);
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.header-movies button {
+  color: var(--text-color);
+  background-color: var(--bg-color-header);
+  height: 40px;
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  font-size: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+.container-movies-favorites {
+  background-color: var(--bg-color-content);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: calc(100vh -65px);
+  gap: 30px;
+  padding: 60px 25px 60px 25px;
+}
+
 @media (max-width: 1050px) {
     .header-favorites h1 {
         font-size: 34px;

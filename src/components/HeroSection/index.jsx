@@ -1,4 +1,3 @@
-import React from 'react';
 import './heroSection.css'
 
 import { Link } from 'react-router-dom';
@@ -22,7 +21,7 @@ function HeroSection() {
                 </p>
 
                 <div className='hero-buttons'>
-                    <PrimaryButton label="Assistir Destaques" icon={<Play size={16} />}/>
+                    <PrimaryButton label="Assistir Destaques" icon={<Play size={16} />} />
 
                     <Link to='/favorites' className='secondary-button'>
                         <Heart size={16} />

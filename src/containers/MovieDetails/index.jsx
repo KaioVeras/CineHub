@@ -3,9 +3,8 @@ import './movieInfo.css';
 
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import { ArrowLeft, Heart, Calendar, Clock, Users } from 'lucide-react';
-import { FaStar } from "react-icons/fa6";
+import { FaStar, FaHeart } from "react-icons/fa6";
 
-import PrimaryButton from '../../components/PrimaryButton';
 import Loader from '../../components/Loader';
 import api from '../../services/api';
 
@@ -14,6 +13,7 @@ function MovieDetails() {
     const navigate = useNavigate();
 
     const [movies, setMovies] = useState({});
+    const [movieLocal, setMovieLocal] = useState(false);
     const [trailer, setTrailer] = useState(null);
     const [cast, setCast] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -70,7 +70,13 @@ function MovieDetails() {
         }
 
         loadDetailsMovies();
-    }, [navigate, id]);
+
+        const myList = JSON.parse(localStorage.getItem("@cinehub"));
+
+        const hasMovie = Array.isArray(myList) && myList.some((item) => item.id === movies.id);
+        setMovieLocal(hasMovie);
+
+    }, [navigate, id, movies]);
 
     const formatRuntime = (runtime) => {
         const hours = Math.floor(runtime / 60); // Deixa sempre em número inteiro e divide por 60min para retornar as horas
@@ -99,6 +105,7 @@ function MovieDetails() {
 
         savedMovies.push(movies);
         localStorage.setItem("@cinehub", JSON.stringify(savedMovies));
+        setMovieLocal(true);
         alert("Filme salvo com sucesso!");
     }
 
@@ -113,10 +120,17 @@ function MovieDetails() {
                 <div className='content-movie-details'>
                     <div className='movie-poster '>
                         <img src={`https://image.tmdb.org/t/p/original/${movies.poster_path}`} alt={movies.title} className='movie-poster-image' />
-                        <button className='primary-button-info' onClick={saveMovies}>
-                            <Heart size={16} />
-                            Quero Assistir
-                        </button>
+                        {movieLocal ? (
+                            <button className='secondary-button-saved'>
+                                <FaHeart size={16} />
+                                Remover da Lista
+                            </button>
+                        ) : (
+                            <button className='primary-button-info' onClick={saveMovies}>
+                                <Heart size={16} />
+                                Quero Assistir
+                            </button>
+                        )}
                     </div>
 
                     <div className='movie-info-details'>

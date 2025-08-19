@@ -5,7 +5,6 @@ import { Clock } from 'lucide-react';
 import { FaStar } from "react-icons/fa6";
 
 import { Link } from 'react-router-dom'
-import { useMenuStore } from '../../store/menuStore';
 
 import api from '../../services/api';
 import Loader from '../Loader';
@@ -13,8 +12,6 @@ import Loader from '../Loader';
 function HeroContent() {
     const [movies, setMovies] = useState([]);
     const [loading, setLoading] = useState(true);
-
-    const closeMenu = useMenuStore((state) => state.closeMenu)
 
     useEffect(() => {
         async function loadMovies() {
