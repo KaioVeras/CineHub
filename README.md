@@ -1,12 +1,90 @@
-# React + Vite
+# 🎬 Cinema Hub
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Uma aplicação web moderna e elegante para descobrir e gerenciar sua coleção de filmes favoritos.
 
-Currently, two official plugins are available:
+![Cinema Hub](src/assets/cinema-hero.jpg)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Características
 
-## Expanding the ESLint configuration
+- **🎭 Catálogo de Filmes**: Navegue por uma coleção cuidadosamente selecionada de filmes aclamados
+- **📱 Design Responsivo**: Interface adaptativa que funciona perfeitamente em desktop e mobile
+- **🎥 Trailers Integrados**: Assista trailers diretamente na aplicação
+- **❤️ Lista de Desejos**: Salve seus filmes favoritos para assistir mais tarde
+- **🌟 Avaliações**: Visualize avaliações do IMDb e classificações etárias
+- **🎨 Interface Moderna**: Design elegante com gradientes dourados e animações suaves
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Tecnologias Utilizadas
+
+- **Frontend**: React 18
+- **Build Tool**: Vite
+- **Estilização**: CSS
+- **Roteamento**: React Router DOM
+- **Estado**: React Hooks/Zustand + Local Storage
+- **Ícones**: Lucide React
+
+## 📦 Instalação
+
+1. **Clone o repositório**
+   ```bash
+   git clone https://github.com/KaioVeras/CineHub.git
+   cd CineHub
+   ```
+
+2. **Instale as dependências**
+   ```bash
+   npm install
+   ```
+
+3. **Execute em modo de desenvolvimento**
+   ```bash
+   npm run dev
+   ```
+
+4. **Acesse a aplicação**
+   ```
+   http://localhost:5173
+   ```
+
+## 🛠️ Scripts Disponíveis
+
+- `npm run dev` - Executa a aplicação em modo de desenvolvimento
+- `npm run build` - Cria a build de produção
+- `npm run preview` - Visualiza a build de produção localmente
+- `npm run lint` - Executa o linter para verificar o código
+
+## 🎯 Funcionalidades
+
+### 🏠 Página Principal
+- Hero section com call-to-action
+- Grid responsivo de filmes em destaque
+- Navegação intuitiva
+
+### 🎬 Detalhes do Filme
+- Informações completas do filme (sinopse, elenco, diretor)
+- Player de trailer integrado
+- Opção de adicionar/remover da lista de desejos
+
+### 📋 Lista de Desejos
+- Gerenciamento completo da watchlist
+- Persistência local dos dados
+- Interface para remoção individual ou em lote
+
+## 🎨 Design System
+
+O projeto utiliza um sistema de design consistente baseado em:
+
+- **Cores**: Paleta dourada com tons cinematográficos
+- **Tipografia**: Hierarquia clara e legível
+- **Componentes**: Biblioteca reutilizável com variações
+- **Animações**: Transições suaves e micro-interações
+
+## 📱 Responsividade
+
+- **Mobile**: Design otimizado para dispositivos móveis
+- **Tablet**: Adaptação para telas médias
+- **Desktop**: Experiência completa para telas grandes
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
