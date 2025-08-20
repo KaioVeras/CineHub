@@ -61,7 +61,7 @@ function Favorites() {
                     <div className='header-movies'>
                         <div className='container-header-title'>
                             <div className='header-title'>
-                                <Heart size={60} color='#fbd650' />
+                                <Heart size={window.innerWidth < 700 ? 50 : 60} color='#fbd650' />
                                 <h1>Quero Assistir</h1>
                             </div>
                             <p>

@@ -4,6 +4,7 @@ import './movieInfo.css';
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import { ArrowLeft, Heart, Calendar, Clock, Users } from 'lucide-react';
 import { FaStar, FaHeart } from "react-icons/fa6";
+import { toast } from 'react-toastify';
 
 import Loader from '../../components/Loader';
 import api from '../../services/api';
@@ -106,7 +107,20 @@ function MovieDetails() {
         savedMovies.push(movies);
         localStorage.setItem("@cinehub", JSON.stringify(savedMovies));
         setMovieLocal(true);
-        alert("Filme salvo com sucesso!");
+        toast.success("Filme adicionado com sucesso!");
+    }
+
+    function removeMovie(id) {
+        const myListMovie = localStorage.getItem("@cinehub");
+        let savedMovies = JSON.parse(myListMovie) || [];
+
+        const removeMovie = savedMovies.filter((movie) => {
+            return movie.id !== id
+        })
+
+        localStorage.setItem("@cinehub", JSON.stringify(removeMovie));
+        setMovieLocal(false);
+        toast.success("Filme removido com sucesso!")
     }
 
     return (
@@ -121,7 +135,7 @@ function MovieDetails() {
                     <div className='movie-poster '>
                         <img src={`https://image.tmdb.org/t/p/original/${movies.poster_path}`} alt={movies.title} className='movie-poster-image' />
                         {movieLocal ? (
-                            <button className='secondary-button-saved'>
+                            <button className='secondary-button-saved' onClick={() => removeMovie(movies.id)}>
                                 <FaHeart size={16} />
                                 Remover da Lista
                             </button>
