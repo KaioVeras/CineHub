@@ -1,6 +1,6 @@
 # 🎬 Cinema Hub
 
-Uma aplicação web moderna e elegante para descobrir e gerenciar sua coleção de filmes favoritos.
+Uma aplicação web moderna e elegante para descobrir e gerenciar sua coleção de filmes em exibição.
 
 ![Cinema Hub](src/assets/cinema-hero.jpg)
 
