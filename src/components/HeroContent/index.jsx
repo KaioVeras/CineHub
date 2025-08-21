@@ -97,7 +97,7 @@ function HeroContent() {
                                     <img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} alt={movie.title} className='card-movie-image' />
 
                                     <div className='card-movie-info'>
-                                        <h3>{movie.title}</h3>
+                                        <h1>{movie.title}</h1>
 
                                         <div className='card-movie-details'>
                                             <p>{movie.release_date?.split('-')[0]}</p>
