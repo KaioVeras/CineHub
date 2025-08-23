@@ -6,5 +6,5 @@ export const useMenuStore = create((set) => ({
     closeMenu: () => set({isMenuOpen: false}),
 
     movieLocal: false,
-    setMovieLocal: (value) => set({ movieLocal: value })
+    setMovieLocal: (value) => set({ movieLocal: value }),
 })) 

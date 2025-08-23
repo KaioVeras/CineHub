@@ -97,17 +97,22 @@ function MovieDetails() {
         const myListMovies = localStorage.getItem("@cinehub");
         let savedMovies = JSON.parse(myListMovies) || []; // O localStorage só armazena strings, aqui estamos convertendo a string de volta em um array ou objeto
 
-        const hasMovie = savedMovies.some((savedMovies) => savedMovies.id === movies.id);
+        const hasMovie = savedMovies.some((item) => item.id === movies.id);
 
         if (hasMovie) {
-            alert("Esse filme já está na sua lista!");
+            alert("Filme já adicionado à lista!");
             return;
         }
 
         savedMovies.push(movies);
         localStorage.setItem("@cinehub", JSON.stringify(savedMovies));
         setMovieLocal(true);
-        toast.success("Filme adicionado com sucesso!");
+
+        if (window.innerWidth > 500) {
+            toast.success("Filme adicionado com sucesso!");
+        } else {
+            alert("Filme adicionado com sucesso!");
+        }
     }
 
     function removeMovie(id) {
@@ -120,7 +125,12 @@ function MovieDetails() {
 
         localStorage.setItem("@cinehub", JSON.stringify(removeMovie));
         setMovieLocal(false);
-        toast.success("Filme removido com sucesso!")
+
+        if (window.innerWidth > 500) {
+            toast.success("Filme removido com sucesso!");
+        } else {
+            alert("Filme removido com sucesso!");
+        }
     }
 
     return (

@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import './heroContent.css'
 
 import { Clock } from 'lucide-react';
 import { FaStar } from "react-icons/fa6";
@@ -23,7 +22,6 @@ function HeroContent() {
                 }
             })
 
-            // console.log(response.data.results.slice(0, 1));
             let moviesList = response.data.results;
 
             const moviesDetails = await Promise.all(

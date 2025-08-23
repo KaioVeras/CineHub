@@ -1,11 +1,41 @@
+import { useEffect, useState } from 'react';
 import './heroSection.css'
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Play, Heart } from 'lucide-react';
 
 import PrimaryButton from '../PrimaryButton';
+import api from '../../services/api';
 
 function HeroSection() {
+    const [idMovie, setIdMovie] = useState([]);
+
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        async function loadId() {
+            await api.get("movie/now_playing", {
+                params: {
+                    api_key: '9b3e56022302e7fd35df05ba0bb010d3',
+                    language: 'pt-BR'
+                }
+            })
+                .then((response) => {
+                    setIdMovie(response.data.results.map((movie) => movie.id));
+                })
+        }
+
+        loadId();
+    }, [])
+
+    function randomNumber() {
+        if (idMovie.length > 0) {
+            const randomIndex = Math.floor(Math.random() * idMovie.length);
+            const randomId = idMovie[randomIndex];
+            navigate(`/movie/${randomId}`);
+        }
+    }
+
     return (
         <section className='hero-section'>
             <div className='hero-bg'></div>
@@ -21,7 +51,9 @@ function HeroSection() {
                 </p>
 
                 <div className='hero-buttons'>
-                    <PrimaryButton label="Assistir Destaques" icon={<Play size={16} />} />
+                    <Link onClick={randomNumber}>
+                        <PrimaryButton label="Assistir Destaques" icon={<Play size={16} />} />
+                    </Link>
 
                     <Link to='/favorites' className='secondary-button'>
                         <Heart size={16} />
