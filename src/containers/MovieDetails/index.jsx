@@ -21,12 +21,7 @@ function MovieDetails() {
 
     useEffect(() => {
         async function loadDetailsMovies() {
-            await api.get(`movie/${id}`, {
-                params: {
-                    api_key: '9b3e56022302e7fd35df05ba0bb010d3',
-                    language: 'pt-BR'
-                }
-            })
+            await api.get(`movie/${id}`)
                 .then((response) => {
                     setMovies(response.data)
                 })
@@ -36,12 +31,7 @@ function MovieDetails() {
                     return;
                 })
 
-            await api.get(`movie/${id}/videos`, {
-                params: {
-                    api_key: '9b3e56022302e7fd35df05ba0bb010d3',
-                    language: 'pt-BR'
-                }
-            })
+            await api.get(`movie/${id}/videos`)
                 .then((response) => {
                     if (response.data.results && response.data.results.length > 0) {
                         setTrailer(response.data.results[0]);
@@ -50,12 +40,7 @@ function MovieDetails() {
                     }
                 })
 
-            await api.get(`movie/${id}/credits`, {
-                params: {
-                    api_key: '9b3e56022302e7fd35df05ba0bb010d3',
-                    language: 'pt-BR'
-                }
-            })
+            await api.get(`movie/${id}/credits`)
                 .then((response) => {
                     setCast(response.data.cast.slice(0, 4));
                 })

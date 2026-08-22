@@ -14,12 +14,7 @@ function HeroSection() {
 
     useEffect(() => {
         async function loadId() {
-            await api.get("movie/now_playing", {
-                params: {
-                    api_key: '9b3e56022302e7fd35df05ba0bb010d3',
-                    language: 'pt-BR'
-                }
-            })
+            await api.get("movie/now_playing")
                 .then((response) => {
                     setIdMovie(response.data.results.map((movie) => movie.id));
                 })

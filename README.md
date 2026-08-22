@@ -1,88 +1,126 @@
-# 🎬 Cinema Hub
+<div align="center">
 
-![Cinema Hub](src/assets/cinema-hero.jpg)
+# 🎬 CineHub
 
-## ✨ Características
+**Descubra, explore e salve os filmes que estão em cartaz — tudo em um só lugar.**
 
-- **🎭 Catálogo de Filmes**: Navegue por uma coleção cuidadosamente selecionada de filmes aclamados
-- **📱 Design Responsivo**: Interface adaptativa que funciona perfeitamente em desktop e mobile
-- **🎥 Trailers Integrados**: Assista trailers diretamente na aplicação
-- **❤️ Lista de Desejos**: Salve seus filmes favoritos para assistir mais tarde
-- **🌟 Avaliações**: Visualize avaliações do IMDb e classificações etárias
-- **🎨 Interface Moderna**: Design elegante com gradientes dourados e animações suaves
+[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)](https://react.dev)
+[![Vite](https://img.shields.io/badge/Vite-7-646CFF?logo=vite&logoColor=white)](https://vite.dev)
+[![React Router](https://img.shields.io/badge/React_Router-7-CA4245?logo=reactrouter&logoColor=white)](https://reactrouter.com)
+[![Zustand](https://img.shields.io/badge/Zustand-5-F97316)](https://zustand.docs.pmnd.rs)
+![Licença](https://img.shields.io/badge/Licen%C3%A7a-MIT-00C853)
 
-## 🚀 Tecnologias Utilizadas
+<img src="src/assets/cinema-hero.jpg" alt="Interior de um cinema com holofotes dourados" width="100%">
 
-- **Frontend**: React 18
-- **Build Tool**: Vite
-- **Estilização**: CSS
-- **Roteamento**: React Router DOM
-- **Estado**: React Hooks/Zustand + Local Storage
-- **Ícones**: Lucide React
+</div>
+
+## 📖 Sobre
+
+O **CineHub** é uma aplicação web que consome a API do [The Movie Database (TMDB)](https://www.themoviedb.org) para exibir os filmes em cartaz, com páginas de detalhes completas, trailers e uma lista de favoritos persistida no navegador.
+
+## ✨ Funcionalidades
+
+- 🎭 **Catálogo em cartaz** — filmes *now playing* direto da API do TMDB
+- 🔍 **Detalhes completos** — sinopse, gêneros, duração, avaliação e elenco de cada filme
+- 🎥 **Trailers** — assista ao trailer diretamente na página do filme
+- ❤️ **Favoritos** — salve filmes para assistir depois; os dados ficam salvos no `localStorage`
+- 🍞 **Notificações** — feedback visual com toasts ao favoritar ou remover filmes
+- 📱 **Responsivo** — layout adaptado para mobile, tablet e desktop
+
+## 🚀 Tecnologias
+
+| Categoria | Tecnologia |
+|---|---|
+| Frontend | [React 19](https://react.dev) |
+| Build tool | [Vite 7](https://vite.dev) |
+| Roteamento | [React Router 7](https://reactrouter.com) |
+| Estado | [Zustand](https://zustand.docs.pmnd.rs) + `localStorage` |
+| Requisições HTTP | [Axios](https://axios-http.com) |
+| Ícones | [Lucide React](https://lucide.dev) · [React Icons](https://react-icons.github.io/react-icons/) |
+| Notificações | [React Toastify](https://fkhadra.github.io/react-toastify/) |
+
+## 🧭 Páginas
+
+| Rota | Descrição |
+|---|---|
+| `/` | Home — hero cinematográfico + grid de filmes em destaque |
+| `/movie/:id` | Detalhes do filme — informações, trailer e ações de favorito |
+| `/favorites` | Favoritos — lista salva localmente, com remoção individual ou total |
+| `*` | Página de erro 404 personalizada |
 
 ## 📦 Instalação
 
-1. **Clone o repositório**
-   ```bash
-   git clone https://github.com/KaioVeras/CineHub.git
-   cd CineHub
-   ```
+> **Requisito:** [Node.js](https://nodejs.org) 18 ou superior.
 
-2. **Instale as dependências**
-   ```bash
-   npm install
-   ```
+```bash
+# 1. Clone o repositório
+git clone https://github.com/KaioVeras/CineHub.git
+cd CineHub
 
-3. **Execute em modo de desenvolvimento**
-   ```bash
-   npm run dev
-   ```
+# 2. Instale as dependências
+npm install
 
-4. **Acesse a aplicação**
-   ```
-   http://localhost:5173
-   ```
+# 3. Configure a API key (veja detalhes abaixo)
+cp .env.example .env
 
-## 🛠️ Scripts Disponíveis
+# 4. Execute em modo de desenvolvimento
+npm run dev
+```
 
-- `npm run dev` - Executa a aplicação em modo de desenvolvimento
-- `npm run build` - Cria a build de produção
-- `npm run preview` - Visualiza a build de produção localmente
-- `npm run lint` - Executa o linter para verificar o código
+Abra [http://localhost:5173](http://localhost:5173) no navegador. 🎉
 
-## 🎯 Funcionalidades
+### 🔑 Configuração da API
 
-### 🏠 Página Principal
-- Hero section com call-to-action
-- Grid responsivo de filmes em destaque
-- Navegação intuitiva
+O CineHub consome a API do [TMDB](https://www.themoviedb.org), portanto você precisa de uma chave gratuita:
 
-### 🎬 Detalhes do Filme
-- Informações completas do filme (sinopse, elenco, diretor)
-- Player de trailer integrado
-- Opção de adicionar/remover da lista de desejos
+1. Crie uma conta no [TMDB](https://www.themoviedb.org/signup)
+2. Gere sua chave em **Configurações → API** ([instruções](https://developer.themoviedb.org/docs/getting-access))
+3. Copie o arquivo `.env.example` para `.env` e cole sua chave:
 
-### 📋 Lista de Desejos
-- Gerenciamento completo da watchlist
-- Persistência local dos dados
-- Interface para remoção individual ou em lote
+```env
+VITE_TMDB_API_KEY=sua_api_key_aqui
+```
 
-## 🎨 Design System
+> ⚠️ O arquivo `.env` está no `.gitignore` e **nunca deve ser commitado**.
 
-O projeto utiliza um sistema de design consistente baseado em:
+## 🛠️ Scripts
 
-- **Cores**: Paleta dourada com tons cinematográficos
-- **Tipografia**: Hierarquia clara e legível
-- **Componentes**: Biblioteca reutilizável com variações
-- **Animações**: Transições suaves e micro-interações
+| Comando | Descrição |
+|---|---|
+| `npm run dev` | Inicia o servidor de desenvolvimento |
+| `npm run build` | Gera a build de produção na pasta `dist/` |
+| `npm run preview` | Serve a build de produção localmente |
+| `npm run lint` | Executa o ESLint para verificar o código |
 
-## 📱 Responsividade
+## 🗂️ Estrutura do projeto
 
-- **Mobile**: Design otimizado para dispositivos móveis
-- **Tablet**: Adaptação para telas médias
-- **Desktop**: Experiência completa para telas grandes
+```
+src/
+├── assets/            # Imagens estáticas
+├── components/        # Componentes reutilizáveis (NavBar, HeroSection, Loader...)
+├── containers/        # Páginas (Home, MovieDetails, Favorites, Error)
+├── routes/            # Configuração de rotas
+├── services/          # Configuração da API do TMDB
+├── store/             # Estados globais (Zustand)
+├── App.jsx
+├── index.css
+└── main.jsx
+```
+
+## 🤝 Contribuindo
+
+Contribuições são bem-vindas! Sinta-se à vontade para abrir uma [issue](https://github.com/KaioVeras/CineHub/issues) ou enviar um pull request.
+
+1. Faça um fork do projeto
+2. Crie uma branch (`git checkout -b feature/minha-feature`)
+3. Commit suas mudanças (`git commit -m 'feat: minha feature'`)
+4. Push para a branch (`git push origin feature/minha-feature`)
+5. Abra um Pull Request
+
+## 👨‍💻 Autor
+
+Feito com 💛 por **[Kaio Veras](https://github.com/KaioVeras)**
 
 ## 📄 Licença
 
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-
+Este projeto está sob a licença MIT.

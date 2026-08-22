@@ -1,11 +1,13 @@
 import axios from "axios";
 
-// BASE DA URL: https://api.themoviedb.org/3/
-
-// URL DA API: https://api.themoviedb.org/3/movie/now_playing?api_key=9b3e56022302e7fd35df05ba0bb010d3&language=pt-BR
-
+// A API key é lida da variável de ambiente VITE_TMDB_API_KEY (arquivo .env).
+// Definida aqui como padrão para não precisar repeti-la em cada requisição.
 const api = axios.create({
-    baseURL: "https://api.themoviedb.org/3/"
+    baseURL: "https://api.themoviedb.org/3/",
+    params: {
+        api_key: import.meta.env.VITE_TMDB_API_KEY,
+        language: "pt-BR",
+    }
 })
 
 export default api;

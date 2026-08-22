@@ -16,8 +16,6 @@ function HeroContent() {
         async function loadMovies() {
             const response = await api.get('movie/now_playing', {
                 params: {
-                    api_key: '9b3e56022302e7fd35df05ba0bb010d3',
-                    language: 'pt-BR',
                     page: 1,
                 }
             })
@@ -26,12 +24,7 @@ function HeroContent() {
 
             const moviesDetails = await Promise.all(
                 moviesList.map(async (objeto) => {
-                    const detailsResponse = await api.get(`movie/${objeto.id}`, {
-                        params: {
-                            api_key: '9b3e56022302e7fd35df05ba0bb010d3',
-                            language: 'pt-BR',
-                        }
-                    });
+                    const detailsResponse = await api.get(`movie/${objeto.id}`);
 
                     return {
                         ...objeto,
