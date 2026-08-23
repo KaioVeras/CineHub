@@ -20,12 +20,12 @@ O **CineHub** é uma aplicação web que consome a API do [The Movie Database (T
 
 ## ✨ Funcionalidades
 
-- 🎭 **Catálogo em cartaz** — filmes *now playing* direto da API do TMDB
-- 🔍 **Detalhes completos** — sinopse, gêneros, duração, avaliação e elenco de cada filme
-- 🎥 **Trailers** — assista ao trailer diretamente na página do filme
-- ❤️ **Favoritos** — salve filmes para assistir depois; os dados ficam salvos no `localStorage`
-- 🍞 **Notificações** — feedback visual com toasts ao favoritar ou remover filmes
-- 📱 **Responsivo** — layout adaptado para mobile, tablet e desktop
+- 🎭 **Catálogo em cartaz** - filmes *now playing* direto da API do TMDB
+- 🔍 **Detalhes completos** - sinopse, gêneros, duração, avaliação e elenco de cada filme
+- 🎥 **Trailers** - assista ao trailer diretamente na página do filme
+- ❤️ **Favoritos** - salve filmes para assistir depois; os dados ficam salvos no `localStorage`
+- 🍞 **Notificações** - feedback visual com toasts ao favoritar ou remover filmes
+- 📱 **Responsivo** - layout adaptado para mobile, tablet e desktop
 
 ## 🚀 Tecnologias
 
@@ -43,9 +43,9 @@ O **CineHub** é uma aplicação web que consome a API do [The Movie Database (T
 
 | Rota | Descrição |
 |---|---|
-| `/` | Home — hero cinematográfico + grid de filmes em destaque |
-| `/movie/:id` | Detalhes do filme — informações, trailer e ações de favorito |
-| `/favorites` | Favoritos — lista salva localmente, com remoção individual ou total |
+| `/` | Home - hero cinematográfico + grid de filmes em destaque |
+| `/movie/:id` | Detalhes do filme - informações, trailer e ações de favorito |
+| `/favorites` | Favoritos - lista salva localmente, com remoção individual ou total |
 | `*` | Página de erro 404 personalizada |
 
 ## 📦 Instalação
@@ -119,7 +119,7 @@ Contribuições são bem-vindas! Sinta-se à vontade para abrir uma [issue](http
 
 ## 👨‍💻 Autor
 
-Feito com 💛 por **[Kaio Veras](https://github.com/KaioVeras)**
+Feito por **[Kaio Veras](https://github.com/KaioVeras)**
 
 ## 📄 Licença
 
